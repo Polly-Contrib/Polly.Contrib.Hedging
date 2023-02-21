@@ -1,13 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp1.1;netcoreapp2.0;netcoreapp3.0;net461;net472</TargetFrameworks>
-    <AssemblyOriginatorKeyFile>..\Polly.Contrib.BlankTemplate.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Polly.Contrib.Hedging.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
+  <Import Project="..\..\eng\Project.targets" />
+  
+  <PropertyGroup>
+    <TargetFrameworks>$(ExecutableTargets)</TargetFrameworks>
+  </PropertyGroup>
+  
   <ItemGroup>
-    <ProjectReference Include="..\Polly.Contrib.BlankTemplate\Polly.Contrib.BlankTemplate.csproj" />
+    <ProjectReference Include="..\Polly.Contrib.Hedging\Polly.Contrib.Hedging.csproj" />
   </ItemGroup>
 
   <ItemGroup>

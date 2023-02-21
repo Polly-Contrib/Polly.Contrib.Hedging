@@ -1,0 +1,13 @@
+<Project DefaultTargets="Build">
+  <PropertyGroup>
+    <ExecutableTargets>net461;net472;net6</ExecutableTargets>
+	<LibraryTargets>netstandard2.0</LibraryTargets>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <Company>Microsoft</Company>
+    <Copyright>Copyright (c) 2023, Microsoft and contributors</Copyright>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <Authors>Microsoft</Authors>
+    <SignAssembly>true</SignAssembly>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+</Project>
