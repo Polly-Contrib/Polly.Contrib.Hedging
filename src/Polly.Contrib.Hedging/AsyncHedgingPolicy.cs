@@ -11,7 +11,7 @@ namespace Polly.Contrib.Hedging
     /// A hedging policy that can be applied to delegates.
     /// </summary>
     /// The return type of delegates which may be executed through the policy.
-    internal sealed class AsyncHedgingPolicy : AsyncPolicy, IsPolicy
+    public sealed class AsyncHedgingPolicy : AsyncPolicy, IsPolicy
     {
         protected override async Task<TResult> ImplementationAsync<TResult>(
             Func<Context, CancellationToken, Task<TResult>> action,
