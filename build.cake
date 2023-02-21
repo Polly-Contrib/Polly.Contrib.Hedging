@@ -24,7 +24,7 @@ var configuration = Argument<string>("configuration", "Release");
 // GLOBAL VARIABLES
 ///////////////////////////////////////////////////////////////////////////////
 
-var projectName = "Polly.Contrib.BlankTemplate";
+var projectName = "Polly.Contrib.Hedging";
 
 var solutions = GetFiles("./**/*.sln");
 var solutionPaths = solutions.Select(solution => solution.GetDirectory());
