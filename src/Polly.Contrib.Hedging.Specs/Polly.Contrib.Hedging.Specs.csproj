@@ -1,9 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\Polly.Contrib.Hedging.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-
   <Import Project="..\..\eng\Project.targets" />
   
   <PropertyGroup>
