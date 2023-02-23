@@ -17,8 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ windows-latest ]
-        dotnet-version: [ '6.0.x' ]
-
+        dotnet-version: ['6.0.x' ]
         
     steps:
     - name: Checkout .NET Solution
@@ -31,5 +30,21 @@ jobs:
       run: dotnet restore src/Polly.Contrib.Hedging.sln
     - name: Build
       run: dotnet build --no-restore src/Polly.Contrib.Hedging.sln
+      
     - name: Test
-      run: dotnet test --no-build --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}" src/Polly.Contrib.Hedging.sln
+      run: dotnet test --no-build --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}" src/Polly.Contrib.Hedging.Specs/Polly.Contrib.Hedging.Specs.csproj   
+    - name: Generate test coverage file
+      uses: b3b00/coverlet-action@1.1.9
+      with:
+        testProject: 'src/Polly.Contrib.Hedging.Specs/Polly.Contrib.Hedging.Specs.csproj'
+        output: 'coverlet/'
+        outputFormat: 'lcov'
+        threshold: 90
+    - name: Generate Code Coverage report
+      id: code-coverage
+      uses: barecheck/code-coverage-action@v1
+      with:
+        barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
+        lcov-file: "src/Polly.Contrib.Hedging.Specs/coverlet/coverage.net6.info"
+        send-summary-comment: true
+        show-annotations: "warning"       
