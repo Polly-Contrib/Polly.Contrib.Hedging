@@ -17,8 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ windows-latest ]
-        dotnet-version: [ '6.0.x' ]
-
+        dotnet-version: ['4.6.1','4.7.x','6.0.x' ]
         
     steps:
     - name: Checkout .NET Solution
@@ -33,3 +32,8 @@ jobs:
       run: dotnet build --no-restore src/Polly.Contrib.Hedging.sln
     - name: Test
       run: dotnet test --no-build --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}" src/Polly.Contrib.Hedging.sln
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3      
+      with:
+        file: ./src/Polly.Specs/coverage-reports/Cobertura.xml
+        flags: ${{ matrix.os_name }}
