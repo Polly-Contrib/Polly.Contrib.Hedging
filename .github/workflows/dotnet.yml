@@ -32,6 +32,10 @@ jobs:
       run: dotnet build --no-restore src/Polly.Contrib.Hedging.sln
     - name: Test
       run: dotnet test --no-build --logger trx --results-directory "TestResults-${{ matrix.dotnet-version }}" src/Polly.Contrib.Hedging.sln
+    - name: Install dependencies
+      run: yarn
+    - name: Run test coverage
+      run: yarn coverage
     - name: Generate Code Coverage report
       id: code-coverage
       uses: barecheck/code-coverage-action@v1
