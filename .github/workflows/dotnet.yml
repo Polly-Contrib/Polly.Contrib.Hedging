@@ -47,4 +47,6 @@ jobs:
         barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
         lcov-file: "src/Polly.Contrib.Hedging.Specs/coverlet/coverage.net6.info"
         send-summary-comment: true
-        show-annotations: "warning"       
+        show-annotations: "warning"
+    - name: stryker dotnet
+      uses: naveen497/actions@0.0.1
