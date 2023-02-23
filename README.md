@@ -10,3 +10,8 @@ First task that is successfully completed triggers the cancellation and disposal
 ## Asynchronous execution
 
 ## Synchronous executions
+
+# Further read
+- [Changelog](docs/CHANGELOG.md)
+- [Code of conduct](docs/CODE_OF_CONDUCT.md)
+- [How to contribute](docs/CONTRIBUTING.md)
