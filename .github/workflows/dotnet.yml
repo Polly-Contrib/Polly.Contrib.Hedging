@@ -45,6 +45,6 @@ jobs:
       uses: barecheck/code-coverage-action@v1
       with:
         barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
-        lcov-file: "src/Polly.Contrib.Hedging.Specs/coverlet/lcov.net6.info"
+        lcov-file: "src/Polly.Contrib.Hedging.Specs/coverlet/coverage.net6.info"
         send-summary-comment: true
         show-annotations: "warning"       
