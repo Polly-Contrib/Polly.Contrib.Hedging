@@ -9,5 +9,6 @@
     <Authors>Microsoft</Authors>
     <SignAssembly>true</SignAssembly>
     <LangVersion>8.0</LangVersion>
+    <AssemblyOriginatorKeyFile>..\Polly.Contrib.Hedging.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 </Project>
