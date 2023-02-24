@@ -60,7 +60,7 @@ jobs:
     steps:
     - name: Checkout .NET Solution
       uses: actions/checkout@v3
-        - name: Setup .NET SDK
+    - name: Setup .NET SDK
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
