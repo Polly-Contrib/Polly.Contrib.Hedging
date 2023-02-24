@@ -18,7 +18,7 @@ jobs:
       matrix:
         os: [ windows-latest ]
         dotnet-version: ['6.0.x' ]
-        
+
     steps:
     - name: Checkout .NET Solution
       uses: actions/checkout@v3
@@ -48,12 +48,22 @@ jobs:
         lcov-file: "src/Polly.Contrib.Hedging.Specs/coverlet/coverage.net6.info"
         send-summary-comment: true
         show-annotations: "warning"
+
   mutation:
     name: Mutation tests
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest ]
+        dotnet-version: ['6.0.x' ]
     steps:
     - name: Checkout .NET Solution
       uses: actions/checkout@v3
+        - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
     - name: Restore dependencies
       run: dotnet restore src/Polly.Contrib.Hedging.sln
     - name: Build
