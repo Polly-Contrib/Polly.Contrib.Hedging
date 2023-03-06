@@ -18,7 +18,7 @@ jobs:
       matrix:
         os: [ windows-latest ]
         dotnet-version: ['6.0.x' ]
-        
+
     steps:
     - name: Checkout .NET Solution
       uses: actions/checkout@v3
@@ -47,4 +47,4 @@ jobs:
         barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
         lcov-file: "src/Polly.Contrib.Hedging.Specs/coverlet/coverage.net6.info"
         send-summary-comment: true
-        show-annotations: "warning"       
+        show-annotations: "warning"    
