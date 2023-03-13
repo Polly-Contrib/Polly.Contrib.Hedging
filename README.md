@@ -16,7 +16,7 @@ The idea behing this strategy is that if a server can respond fast enough, we ca
 
 - It defines multiple backup solutions when an operation fails
 - Hedging means spawning multiple concurrent execution paths to substitute a possible failure on the primary path
-- It allows supporting backup solutions (similar to the Fallback policy) in a concurrent manner (unlike the sequential approach of the Fallback policy)
+- It allows supporting backup solutions (similar to the [Fallback policy](https://github.com/App-vNext/Polly/wiki/Fallback)) in a concurrent manner (unlike the sequential approach of the [Fallback policy](https://github.com/App-vNext/Polly/wiki/Fallback)).
 
 ## Mechanism
 
@@ -29,8 +29,8 @@ The idea behing this strategy is that if a server can respond fast enough, we ca
 
 ## When do we need this policy?
 
-- A common case is the use of multiple endpoints of a service for retrieving a resource
-- It has as primary goal to improve latency, but it is load expensive.
+- A common case is the use of multiple endpoints of a service for retrieving a resource.
+- When there are multiple possible solutions for a task, if high latency is not desired, then hedging is needed. It allows the selection of the fastest solution from a set and it has as primary goal the improvement of latency.
 
 # Usage
 
