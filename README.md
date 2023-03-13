@@ -1,7 +1,7 @@
 # Polly.Contrib.Hedging
 
 The Polly.Contrib.Hedging exposes a custom policy, i.e. Hedging.
-The hedging policy allows the execution of multiple tasks with different degrees of concurrency, until one of them completes with success or until all of them are failed.
+The hedging policy allows the execution of multiple tasks with different degrees of concurrency, until one of them completes with success or until all of them have failed.
 
 ## What is Hedging?
 
